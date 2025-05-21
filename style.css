@@ -1,0 +1,155 @@
+/* Base styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s ease;
+}
+
+.wrapper {
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #000;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: inherit;
+    text-align: center;
+}
+
+p {
+    font-size: 50px;
+    font-weight: bold;
+    color: inherit;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#button-start {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#button-start:hover {
+    background-color: #45a049;
+}
+
+#button-stop {
+    background-color: #f44336;
+    color: white;
+}
+
+#button-stop:hover {
+    background-color: #da190b;
+}
+
+#button-reset {
+    background-color: #2196F3;
+    color: white;
+}
+
+#button-reset:hover {
+    background-color: #0b7dda;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background: #121212;
+}
+
+body.dark-mode .wrapper {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+/* Dark Mode Toggle (top-right corner) */
+.dark-mode-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 999;
+}
+
+/* Switch Styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #ccc;
+    border-radius: 34px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+input:checked+.slider {
+    background-color: #4CAF50;
+}
+
+input:checked+.slider::before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+/* Icon in the switch */
+.slider .icon {
+    position: absolute;
+    top: 5px;
+    left: 9px;
+    font-size: 18px;
+    pointer-events: none;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
